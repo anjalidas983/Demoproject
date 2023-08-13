@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class=" col-md-6 " >
+            <img src="{{m.img.url}}" class="img-top" alt="..." height="250px;" width="150px;">
+        </div>
+        <div class=" col-md-6 ">
+            <h5 class="card-title" style="text-transform:uppercase;"><b>{{m.title}}</b></h5><br>
+
+                    <p class="card-text"><b>DESCRIPTION:</b><br><i>{{m.description}}</i></p>
+                <a href="{% url 'pvr:editmovie' m.id %}" class="btn btn-warning">EDIT</a>
+                <a href="{% url 'pvr:deletemovie' m.id %}" class="btn btn-danger">DELETE</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

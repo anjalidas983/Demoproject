@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  Are you want to delete  the movies
+  <input type="submit">
+</form>
+{% endblock %}

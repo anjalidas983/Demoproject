@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center><h3>Movies Now Showing</h3></center>
+<br>
+<div class="container">
+    <div class="row ">
+        {% for i in m %}
+        <div class=" col-md-4 " style="height:">
+            <div class="card" style="height:">
+                <img src="{{i.img.url}}" class="card-img-top"  alt="..." height="140px">
+                <div class="card-body">
+                 <h5 class="card-title" style="text-transform:uppercase;">{{i.movie_name}}</h5>
+
+                    <p class="card-text">Description:{{i.description}}</p>
+                <a href="{% url 'pvr:viewmovie' i.id %}" class="btn btn-primary">VIEW</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
